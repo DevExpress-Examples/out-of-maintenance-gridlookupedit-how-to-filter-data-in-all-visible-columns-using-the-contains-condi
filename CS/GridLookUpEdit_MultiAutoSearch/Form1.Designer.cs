@@ -1,4 +1,7 @@
-﻿namespace GridLookUpEdit_MultiAutoSearch
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+
+namespace GridLookUpEdit_MultiAutoSearch
 {
     partial class Form1
     {
@@ -32,14 +35,10 @@
             this.nwindDataSet = new GridLookUpEdit_MultiAutoSearch.nwindDataSet();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersTableAdapter = new GridLookUpEdit_MultiAutoSearch.nwindDataSetTableAdapters.CustomersTableAdapter();
-            this.customGridLookUpEdit1 = new GridLookUpEdit_MultiAutoSearch.CustomGridLookUpEdit();
-            this.customGridLookUpEdit1View = new GridLookUpEdit_MultiAutoSearch.CustomGridView();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customGridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
@@ -58,38 +57,20 @@
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
             // 
-            // customGridLookUpEdit1
-            // 
-            this.customGridLookUpEdit1.Location = new System.Drawing.Point(56, 43);
-            this.customGridLookUpEdit1.Name = "customGridLookUpEdit1";
-            this.customGridLookUpEdit1.Properties.AutoComplete = false;
-            this.customGridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.customGridLookUpEdit1.Properties.DataSource = this.customersBindingSource;
-            this.customGridLookUpEdit1.Properties.DisplayMember = "ContactName";
-            this.customGridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.customGridLookUpEdit1.Properties.View = this.customGridLookUpEdit1View;
-            this.customGridLookUpEdit1.Size = new System.Drawing.Size(175, 20);
-            this.customGridLookUpEdit1.TabIndex = 0;
-            // 
-            // customGridLookUpEdit1View
-            // 
-            this.customGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.customGridLookUpEdit1View.Name = "customGridLookUpEdit1View";
-            this.customGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.customGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
             // gridLookUpEdit1
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(56, 104);
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(165, 147);
             this.gridLookUpEdit1.Name = "gridLookUpEdit1";
             this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit1.Properties.DataSource = this.customersBindingSource;
             this.gridLookUpEdit1.Properties.DisplayMember = "ContactName";
-            this.gridLookUpEdit1.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(175, 20);
-            this.gridLookUpEdit1.TabIndex = 1;
+            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEdit1.Properties.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch;
+            this.gridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(554, 20);
+            this.gridLookUpEdit1.TabIndex = 0;
+            this.gridLookUpEdit1.AutoSearch += new DevExpress.XtraEditors.Controls.LookUpEditAutoSearchEventHandler(this.gridLookUpEdit1_AutoSearch);
             // 
             // gridLookUpEdit1View
             // 
@@ -102,16 +83,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(917, 347);
             this.Controls.Add(this.gridLookUpEdit1);
-            this.Controls.Add(this.customGridLookUpEdit1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customGridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
@@ -123,10 +101,8 @@
         private nwindDataSet nwindDataSet;
         private System.Windows.Forms.BindingSource customersBindingSource;
         private GridLookUpEdit_MultiAutoSearch.nwindDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
-        private CustomGridLookUpEdit customGridLookUpEdit1;
-        private CustomGridView customGridLookUpEdit1View;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private GridLookUpEdit gridLookUpEdit1;
+        private GridView gridLookUpEdit1View;
     }
 }
 

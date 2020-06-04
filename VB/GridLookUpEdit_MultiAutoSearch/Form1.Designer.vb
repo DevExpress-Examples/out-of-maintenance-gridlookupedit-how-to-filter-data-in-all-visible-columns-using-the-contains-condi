@@ -1,4 +1,7 @@
-﻿Namespace GridLookUpEdit_MultiAutoSearch
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraGrid.Views.Grid
+
+Namespace GridLookUpEdit_MultiAutoSearch
     Partial Public Class Form1
         ''' <summary>
         ''' Required designer variable.
@@ -16,7 +19,7 @@
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
+#Region "Windows Form Designer generated code"
 
         ''' <summary>
         ''' Required method for Designer support - do not modify
@@ -24,101 +27,74 @@
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Me.nwindDataSet = New GridLookUpEdit_MultiAutoSearch.nwindDataSet()
+            Me.nwindDataSet = New nwindDataSet()
             Me.customersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-            Me.customersTableAdapter = New GridLookUpEdit_MultiAutoSearch.nwindDataSetTableAdapters.CustomersTableAdapter()
-            Me.customGridLookUpEdit1 = New GridLookUpEdit_MultiAutoSearch.CustomGridLookUpEdit()
-            Me.customGridLookUpEdit1View = New GridLookUpEdit_MultiAutoSearch.CustomGridView()
+            Me.customersTableAdapter = New nwindDataSetTableAdapters.CustomersTableAdapter()
             Me.gridLookUpEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
             Me.gridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
             CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.customersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.customGridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.customGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.gridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.gridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
-            ' 
-            ' nwindDataSet
-            ' 
+            '
+            'nwindDataSet
+            '
             Me.nwindDataSet.DataSetName = "nwindDataSet"
             Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-            ' 
-            ' customersBindingSource
-            ' 
+            '
+            'customersBindingSource
+            '
             Me.customersBindingSource.DataMember = "Customers"
             Me.customersBindingSource.DataSource = Me.nwindDataSet
-            ' 
-            ' customersTableAdapter
-            ' 
+            '
+            'customersTableAdapter
+            '
             Me.customersTableAdapter.ClearBeforeFill = True
-            ' 
-            ' customGridLookUpEdit1
-            ' 
-            Me.customGridLookUpEdit1.Location = New System.Drawing.Point(56, 43)
-            Me.customGridLookUpEdit1.Name = "customGridLookUpEdit1"
-            Me.customGridLookUpEdit1.Properties.AutoComplete = False
-            Me.customGridLookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.customGridLookUpEdit1.Properties.DataSource = Me.customersBindingSource
-            Me.customGridLookUpEdit1.Properties.DisplayMember = "ContactName"
-            Me.customGridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-            Me.customGridLookUpEdit1.Properties.View = Me.customGridLookUpEdit1View
-            Me.customGridLookUpEdit1.Size = New System.Drawing.Size(175, 20)
-            Me.customGridLookUpEdit1.TabIndex = 0
-            ' 
-            ' customGridLookUpEdit1View
-            ' 
-            Me.customGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-            Me.customGridLookUpEdit1View.Name = "customGridLookUpEdit1View"
-            Me.customGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
-            Me.customGridLookUpEdit1View.OptionsView.ShowGroupPanel = False
-            ' 
-            ' gridLookUpEdit1
-            ' 
-            Me.gridLookUpEdit1.Location = New System.Drawing.Point(56, 104)
+            '
+            'gridLookUpEdit1
+            '
+            Me.gridLookUpEdit1.Location = New System.Drawing.Point(139, 132)
             Me.gridLookUpEdit1.Name = "gridLookUpEdit1"
-            Me.gridLookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.gridLookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
             Me.gridLookUpEdit1.Properties.DataSource = Me.customersBindingSource
             Me.gridLookUpEdit1.Properties.DisplayMember = "ContactName"
-            Me.gridLookUpEdit1.Properties.View = Me.gridLookUpEdit1View
-            Me.gridLookUpEdit1.Size = New System.Drawing.Size(175, 20)
-            Me.gridLookUpEdit1.TabIndex = 1
-            ' 
-            ' gridLookUpEdit1View
-            ' 
+            Me.gridLookUpEdit1.Properties.PopupView = Me.gridLookUpEdit1View
+            Me.gridLookUpEdit1.Properties.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.AutoSearch
+            Me.gridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+            Me.gridLookUpEdit1.Size = New System.Drawing.Size(717, 20)
+            Me.gridLookUpEdit1.TabIndex = 0
+            '
+            'gridLookUpEdit1View
+            '
             Me.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
             Me.gridLookUpEdit1View.Name = "gridLookUpEdit1View"
             Me.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
             Me.gridLookUpEdit1View.OptionsView.ShowGroupPanel = False
-            ' 
-            ' Form1
-            ' 
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
+            '
+            'Form1
+            '
+            Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(284, 262)
+            Me.ClientSize = New System.Drawing.Size(1007, 321)
             Me.Controls.Add(Me.gridLookUpEdit1)
-            Me.Controls.Add(Me.customGridLookUpEdit1)
             Me.Name = "Form1"
             Me.Text = "Form1"
             CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.customersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.customGridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.customGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.gridLookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
             CType(Me.gridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
 
-        #End Region
+#End Region
 
         Private nwindDataSet As nwindDataSet
         Private customersBindingSource As System.Windows.Forms.BindingSource
-        Private customersTableAdapter As GridLookUpEdit_MultiAutoSearch.nwindDataSetTableAdapters.CustomersTableAdapter
-        Private customGridLookUpEdit1 As CustomGridLookUpEdit
-        Private customGridLookUpEdit1View As CustomGridView
-        Private gridLookUpEdit1 As DevExpress.XtraEditors.GridLookUpEdit
-        Private gridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
+        Private customersTableAdapter As nwindDataSetTableAdapters.CustomersTableAdapter
+        Private WithEvents gridLookUpEdit1 As GridLookUpEdit
+        Private gridLookUpEdit1View As GridView
     End Class
 End Namespace
 

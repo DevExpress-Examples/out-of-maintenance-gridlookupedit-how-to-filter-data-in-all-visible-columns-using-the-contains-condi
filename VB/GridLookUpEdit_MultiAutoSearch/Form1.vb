@@ -19,5 +19,9 @@ Namespace GridLookUpEdit_MultiAutoSearch
             Me.customersTableAdapter.Fill(Me.nwindDataSet.Customers)
 
         End Sub
+
+        Private Sub gridLookUpEdit1_AutoSearch(sender As Object, e As DevExpress.XtraEditors.Controls.LookUpEditAutoSearchEventArgs) Handles gridLookUpEdit1.AutoSearch
+            e.SetParameters(DevExpress.Data.Filtering.FindPanelParserKind.Exact, DevExpress.Data.Filtering.FilterCondition.Contains)
+        End Sub
     End Class
 End Namespace
